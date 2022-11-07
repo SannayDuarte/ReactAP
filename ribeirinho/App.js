@@ -3,9 +3,6 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Separator = () => (
-  <View style={styles.separator} />
-);
 
 
 function Clientes({ navigation }) {
@@ -22,7 +19,7 @@ function Clientes({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center' }}>
       <View style={styles.fixToText}>
-        <Button color='#034C8C'
+        <Button color='#0f291e'
           title=" Verificar Clientes de Ribeirinho Viagem"
           onPress={() => navigation.navigate('Clientes')}
         />
@@ -30,35 +27,35 @@ function Clientes({ navigation }) {
       <View style={styles.fixToList}>
         <Text style={{ width: '10%' }}>Id</Text>
         <Text style={{ width: '30%' }}>Nome</Text>
-        <Text style={{ width: '30%' }}>Sobrenome</Text>
+        <Text style={{ width: '60%' }}>Sobrenome</Text>
         <Text style={{ width: '30%' }}>Rg</Text>
         <Text style={{ width: '30%' }}>Cpf</Text>
-        <Text style={{ width: '30%' }}>Data De Nascimento</Text>
-        <Text style={{ width: '30%' }}>Celular</Text>
-        <Text style={{ width: '30%' }}>Sexualidade</Text>
+        <Text style={{ width: '80%' }}>Data De Nascimento</Text>
+        <Text style={{ width: '50%' }}>Celular</Text>
+        <Text style={{ width: '60%' }}>Sexualidade</Text>
         <Text style={{ width: '30%' }}>Email</Text>
         <Text style={{ width: '30%' }}>Senha</Text>
 
         <Text style={{ width: '30%' }}>Cep</Text>
-        <Text style={{ width: '30%' }}>Estado</Text>
-        <Text style={{ width: '30%' }}>Cidade</Text>
-        <Text style={{ width: '30%' }}>Bairro</Text>
+        <Text style={{ width: '40%' }}>Estado</Text>
+        <Text style={{ width: '40%' }}>Cidade</Text>
+        <Text style={{ width: '40%' }}>Bairro</Text>
         <Text style={{ width: '30%' }}>Rua</Text>
 
-        <Text style={{ width: '30%' }}>Cidade de Destino</Text>
-        <Text style={{ width: '30%' }}>Cidade Origem</Text>
-        <Text style={{ width: '30%' }}>Data da Viagem</Text>
+        <Text style={{ width: '80%' }}>Cidade de Destino</Text>
+        <Text style={{ width: '70%' }}>Cidade Origem</Text>
+        <Text style={{ width: '70%' }}>Data da Viagem</Text>
 
-        <Text style={{ width: '30%' }}>Id Da Passagem</Text>
-        <Text style={{ width: '30%' }}>Metodo de Viagem</Text>
-        <Text style={{ width: '30%' }}>Valor</Text>
+        <Text style={{ width: '80%' }}>Id Da Passagem</Text>
+        <Text style={{ width: '80%' }}>Metodo de Viagem</Text>
+        <Text style={{ width: '40%' }}>Valor</Text>
       </View>
       {Clientes.map(cli => (
         <View>
           <View style={styles.fixToList}>
             <Text style={{ width: '10%' }}>{cli.id}</Text>
             <Text style={{ width: '30%' }}>{cli.nome}</Text>
-            <Text style={{ width: '30%' }}>{cli.sobrenome}</Text>
+            <Text style={{ width: '60%' }}>{cli.sobrenome}</Text>
             <Text style={{ width: '30%' }}>{cli.rg}</Text>
             <Text style={{ width: '30%' }}>{cli.cpf}</Text>
             <Text style={{ width: '30%' }}>{cli.datadenascimento}</Text>
@@ -99,7 +96,7 @@ function App() {
           component={Clientes}
           options={{
             title: 'Ribeirinho Viagem',
-            headerStyle: { backgroundColor: '#034C8C', }, headerTintColor: '#fff'
+            headerStyle: { backgroundColor: 'burlywood', }, headerTintColor: '#0f291e'
           }}
         />
 
@@ -114,26 +111,24 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#0f291e',
     alignItems: 'center',
     justifyContent: 'center',
   },
   titulo1: {
     fontWeight: 'bold',
-    fontSize: 50,
-    marginBottom: 50,
-  },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    fontSize: 150,
+    marginBottom: 80,
   },
   fixToText: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 30,
+    fontSize: 150,
   },
   fixToList: {
-    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flexDirection: 'colum',
+    fontSize: 150,
   },
 });
